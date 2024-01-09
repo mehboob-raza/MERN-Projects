@@ -4,6 +4,7 @@ import BackButton from "../components/BackButton";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import { serverUrl } from "../App";
 
 const EditBook = () => {
   const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ const EditBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:2000/books/${id}")
+      .get(`${serverUrl}/books/${id}`)
       .then((res) => {
         setAuthor(res.data.author);
         setPublishYear(res.data.publishYear);
@@ -39,7 +40,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:2000/books/${id}`, data)
+      .put(`${serverUrl}/books/${id}`, data)
       .then(() => {
         setLoading(false);
         navigate("/");

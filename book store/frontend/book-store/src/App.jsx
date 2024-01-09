@@ -8,6 +8,10 @@ import EditBook from "./pages/EditBook";
 import ShowBooks from "./pages/ShowBooks";
 import "./App.css";
 
+export const serverUrl = import.meta.env.PROD
+  ? "https://vercel-server-test-ten.vercel.app"
+  : "http://localhost:2000";
+
 const App = () => {
   return (
     <Box>

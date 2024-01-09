@@ -1,23 +1,25 @@
 import { GrInfo, GrFormEdit } from "react-icons/gr";
 import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid, Container } from "@mui/material";
 import { useState } from "react";
 
 const BookCards = ({ books }) => {
   return (
-    <Box display="flex" flexWrap="wrap" gap={2}>
+    <Container maxWidth='lg'>
+      <Grid container gap={1}>
       {books.map((book) => {
         return (
-          <Box
-            key={book.id}
+          <Grid item key={book.id} lg={4} md={10} sm={8} xs={12}>
+            <Box
+            
             sx={{
-              width: "30%",
-
+              width: "100%",
               p: 3,
               border: "2px solid gray",
               gap: 3,
-              borderRadius: 2,
+                borderRadius: 2,
+              height: "100%",
             }}
           >
             <Box display="flex" gap={3} flexWrap="wrap">
@@ -78,9 +80,12 @@ const BookCards = ({ books }) => {
               </Link>
             </Box>
           </Box>
+          </Grid>
         );
       })}
-    </Box>
+   
+      </Grid>
+    </Container>
   );
 };
 

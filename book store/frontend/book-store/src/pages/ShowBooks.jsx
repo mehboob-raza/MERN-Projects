@@ -4,6 +4,7 @@ import BackButton from "../components/BackButton";
 import { Box, Container, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
+import { serverUrl } from "../App";
 
 const ShowBooks = () => {
   const [book, setBook] = useState({});
@@ -15,7 +16,7 @@ const ShowBooks = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:2000/books/${id}`)
+      .get(`${serverUrl}/books/${id}`)
       .then((res) => {
         setBook(res.data);
         setLoading(false);

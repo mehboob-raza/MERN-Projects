@@ -1,0 +1,12 @@
+ using MVC pattern in this project.
+
+ controllers ==> for callback functions
+ routes ==> for making all routes in this project
+ middleware ==> for making all middlewares in this project
+ models ==> all Schemaa's of application
+utils ==> for making all classes and usefull functions
+
+
+install bcryptjs ===> convert password into hash to increase security
+jsonwebtokens ===> token base authentication it assign a token to decrypt byusing unique key
+cookie 

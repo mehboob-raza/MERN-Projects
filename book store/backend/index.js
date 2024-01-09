@@ -38,6 +38,7 @@ mongoose
       console.log(`App is listening to the port ${PORT}`);
     });
   })
+
   .catch((error) => {
     console.log(error);
   });

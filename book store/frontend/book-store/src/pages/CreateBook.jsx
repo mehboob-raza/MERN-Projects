@@ -4,6 +4,7 @@ import BackButton from "../components/BackButton";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import { serverUrl } from "../App";
 
 const CreateBook = () => {
   const [title, setTitle] = useState("");
@@ -21,7 +22,7 @@ const CreateBook = () => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:2000/books", data)
+      .post(`${serverUrl}/books`, data)
       .then(() => {
         setLoading(false);
         navigate("/");

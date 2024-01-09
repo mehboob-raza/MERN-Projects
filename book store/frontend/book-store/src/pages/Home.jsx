@@ -6,6 +6,7 @@ import { AiFillFileAdd } from "react-icons/ai";
 import Spinner from "../components/Spinner";
 import BookTables from "../components/home/BookTables";
 import BookCards from "../components/home/BookCards";
+import { serverUrl } from "../App";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -16,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:2000/books")
+      .get(`${serverUrl}/books`)
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);

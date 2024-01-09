@@ -1,0 +1,29 @@
+{
+  "name": "chatgpt-clone-with-different-feature",
+  "version": "1.0.0",
+  "proxy": "http://localhost:8080",
+  "description": "chat gpt clone",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "start": "node server.js",
+    "client": "npm run dev --prefix ./client",
+    "all": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Raza",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "concurrently": "^8.2.2",
+    "cookie": "^0.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.1",
+    "morgan": "^1.10.0",
+    "openai": "^4.0.0"
+  }
+}
